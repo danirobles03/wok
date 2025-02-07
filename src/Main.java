@@ -44,8 +44,12 @@ public class Main {
         }
         preu = preusingredientsarray.get(base - 1);
         if ((base==4)||(base==5)||(base==7)) {
+            if (base==7){
+                mida = "gran";
+            }
             System.out.println("Has escollit la mida " + mida + " amb la base d'" + nomingredients.get(base - 1));
         }
+
         else {
         System.out.println("Has escollit la mida " + mida + " amb la base de " + nomingredients.get(base - 1));}
         System.out.println("Afegeix els ingredients que vulguis, amb un preu adicional de 1,60€ cadascun: (indica només el número de l'ingredient)");
@@ -175,10 +179,24 @@ public class Main {
         System.out.println(" ");
         if (ingredientesin==0) {
             if (salsa==10) {
-                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", no té cap ingredient i no porta cap salta .");}
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", no té cap ingredient i no porta cap salsa.");}
+            else {
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", no té cap ingredient i porta " + nomingredients3.get(salsa - 1) + ".");
+            }
         }
-        else {
-            System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", té com a ingredients " + ingredientes + " i porta " + nomingredients3.get(salsa - 1) + " .");
+        if (ingredientesin==1) {
+            if (salsa==10) {
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", té com a ingredient " + ingredientes + "i no porta cap salsa.");}
+            else {
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", té com a ingredient " + ingredientes + " i porta " + nomingredients3.get(salsa - 1) + ".");
+            }
+        }
+        if (ingredientesin>1) {
+            if (salsa==10) {
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", té com a ingredients " + ingredientes + "i no porta cap salsa.");}
+            else {
+                System.out.println("El teu wok final és de mida " + mida + " amb base " + nomingredients.get(base - 1) + ", té com a ingredients " + ingredientes + " i porta " + nomingredients3.get(salsa - 1) + ".");
+            }
         }
         double roundedValue = Math.round(preu * 100.00) / 100.00;
         System.out.println("El preu final és de "+roundedValue+"€.");
